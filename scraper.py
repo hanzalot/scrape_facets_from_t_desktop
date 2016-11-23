@@ -3,13 +3,12 @@
 # combining from https://github.com/wfdd/inatsisartut-scraper/blob/master/scraper.py 
 # AND https://github.com/ianibo/SirsiDynixIBistroScraper/blob/master/scraper.py
 
-import scraperwiki
-import lxml.html
-import hashlib
+from collections import namedtuple
+import datetime as dt
+import itertools as it
 import re
-from splinter import Browser
-import sys, traceback, logging, shutil, platform
-from string import ascii_lowercase
+import sqlite3
+from urllib.parse import parse_qs, urljoin, urlparse, quote as urlquote
 
 PARSER_ID = 'hanz'
 
